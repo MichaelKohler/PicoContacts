@@ -10,14 +10,15 @@
     <link rel="stylesheet" href="assets/css/main.css">
 </head>
 <body>
-    <div id="test" ng-controller="MainController as main">
-        <p>Test {{main.test}}</p>
-    </div>
+    <ng-view></ng-view>
 
     <script src="assets/js/libs/jquery-2.1.1.js"></script>
     <script src="assets/js/libs/angularjs_1.3.0b.js"></script>
-    <script src="assets/js/libs/foundation.min.js"></script>
+    <script src="assets/js/libs/angularjs-route.js"></script>
+
     <script src="app.js"></script>
+    <script src="controllers/MainController.js"></script>
+    <script src="controllers/AboutController.js"></script>
 
 </body>
 </html>

@@ -1,8 +1,13 @@
-(function() {
-    var picoContactsApp = angular.module('PicoContacts', [ ]);
+var picoContactsApp = angular.module('PicoContacts', [ 'ngRoute' ]);
 
-    picoContactsApp.controller('MainController', function() {
-        this.test = 'blaa';
+picoContactsApp.config(['$routeProvider', function($routeProvider) {
+    $routeProvider.when('/', {
+        controller: 'MainController',
+        controllerAs: 'main',
+        templateUrl: 'views/index.html'
+    }).when('/about', {
+        controller: 'AboutController',
+        controllerAs: 'about',
+        templateUrl: 'views/about.html'
     });
-
-})();
+}]);

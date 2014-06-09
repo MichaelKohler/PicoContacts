@@ -1,7 +1,4 @@
 a, a:hover, a:active {
-    color: #0099CC;
-}
-
-a:visited {
-    color: #c0c0c0;
+    color: #ad3d3d;
+    text-decoration: none;
 }

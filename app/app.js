@@ -11,3 +11,7 @@ picoContactsApp.config(['$routeProvider', function($routeProvider) {
         templateUrl: 'views/about.html'
     });
 }]);
+
+document.addEventListener('DOMComponentsLoaded', function(){
+    // run brick code here...
+});

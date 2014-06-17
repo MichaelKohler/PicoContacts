@@ -1,4 +1,43 @@
+body {
+    font-family: "Fira Sans","Fira Sans","Segoe UI",Frutiger,"Frutiger Linotype","Dejavu Sans","Helvetica Neue",Arial,sans-serif;
+}
+
 a, a:hover, a:active {
     color: #ad3d3d;
     text-decoration: none;
+}
+
+.button-secondary {
+    color: white;
+    border-radius: 4px;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+    background: rgb(66, 184, 221);
+}
+
+x-appbar h1 {
+    font-size: 1.3em;
+}
+
+#container {
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+#index {
+    text-align: center;
+}
+
+#indexTextContent {
+    text-align: left;
+    font-size: 0.7em;
+}
+
+#indexLogo {
+    margin-top: 5vh;
+    height: 50%;
+    width: 50%;
+}
+
+#configureButton {
+    margin-top: 0.5em;
 }

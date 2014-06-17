@@ -11,5 +11,5 @@ picoContactsApp.controller('MainController', function($scope, $location) {
 
     $scope.routeToConfiguration = function() {
         $location.path('/configure');
-    }
+    };
 });

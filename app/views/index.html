@@ -4,7 +4,14 @@
         <h1>PicoContacts</h1>
         <button ng-click="routeToAbout()">?</button>
     </x-appbar>
+    <div id="container">
+        <img id="indexLogo" src="assets/images/addressbook.png" />
 
-    <p>PicoContacts is a....</p>
-    <button id="configureServerButton" ng-click="routeToConfiguration()">Configure Server</button>
+        <div id="indexTextContent">
+            <p>PicoContacts is an app to synchronize your local contacts with your OwnCloud server. It also provides the possibility to sync and overwrite in either direction.</p>
+            <p>To get started, please click on the configure button below and enter your server address and credentials.</p>
+        </div>
+
+        <button id="configureButton" class="pure-button button-secondary" ng-click="routeToConfiguration()">Configure Server</button>
+    </div>
 </div>

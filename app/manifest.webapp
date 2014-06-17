@@ -1,0 +1,13 @@
+{
+  "name": "PicoContacts",
+  "description": "Sync your contacts to Owncloud and back!",
+  "launch_path": "/index.html",
+  "icons": {
+    "128": "/assets/images/icon-128.png"
+  },
+  "developer": {
+    "name": "Michael Kohler",
+    "url": "http://www.michaelkohler.info"
+  },
+  "default_locale": "en"
+}

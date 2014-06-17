@@ -24,6 +24,13 @@ x-appbar h1 {
     font-size: 0.7em;
 }
 
+.alert {
+    background-color: rgb(255, 131, 127);
+    border-radius: 5px;
+    color: rgb(255, 255, 255);
+    padding: 1px 2px 1px 5px;
+}
+
 #index {
     text-align: center;
 }

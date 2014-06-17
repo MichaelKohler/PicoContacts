@@ -4,6 +4,36 @@
         <h1>Configure Server</h1>
     </x-appbar>
     <div id="container">
-        <p>Configure the server..</p>
+        <p>We couldn't find any server information. Please provide the address, username and password. Without them, you won't be able to sync to your OwnCloud instance.</p>
+
+        <div class="alert pure-u-1" ng-show="configForm.$invalid && !configForm.$pristine">
+            <p>Please fill in all information!<br />One or more fields are not correct!</p>
+        </div>
+        <form name="configForm" class="pure-form pure-form-aligned" ng-submit="saveConfiguration()" novalidate>
+            <fieldset>
+                <div class="pure-control-group">
+                    <label for="address">Server Address</label>
+                    <input ng-model="config.address" class="pure-input-1" required id="address" type="url" placeholder="Server Address">
+                </div>
+
+                <div class="pure-control-group">
+                    <label for="name">Username</label>
+                    <input ng-model="config.username" class="pure-input-1" required id="name" type="text" placeholder="Username">
+                </div>
+
+                <div class="pure-control-group">
+                    <label for="password">Password</label>
+                    <input ng-model="config.password" class="pure-input-1" required id="password" type="password" placeholder="Password">
+                </div>
+
+                <label for="masterslave">Master/Slave</label>
+                <select ng-model="config.master" required class="pure-input-1" id="masterslave">
+                    <option value="">Please choose a master..</option>
+                    <option value="LOCAL">Local as master</option>
+                    <option value="REMOTE">Remote as master</option>
+                </select>
+            </fieldset>
+            <button type="submit" ng-disabled="configForm.$invalid" class="pure-u-1 pure-button button-secondary">Save Configuration</button>
+        </form>
     </div>
 </div>

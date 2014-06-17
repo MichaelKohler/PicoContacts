@@ -21,6 +21,7 @@ x-appbar h1 {
 #container {
     margin-right: 10px;
     margin-left: 10px;
+    font-size: 0.7em;
 }
 
 #index {
@@ -29,7 +30,6 @@ x-appbar h1 {
 
 #indexTextContent {
     text-align: left;
-    font-size: 0.7em;
 }
 
 #indexLogo {
@@ -40,4 +40,11 @@ x-appbar h1 {
 
 #configureButton {
     margin-top: 0.5em;
+}
+
+#aboutList {
+    list-style: none inside;
+    margin-left: 0;
+    padding-left: 0;
+    text-align: left;
 }

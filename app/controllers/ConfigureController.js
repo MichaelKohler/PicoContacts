@@ -1,0 +1,3 @@
+picoContactsApp.controller('ConfigureController', function() {
+    
+});

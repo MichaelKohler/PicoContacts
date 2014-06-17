@@ -1,0 +1,3 @@
+picoContactsApp.controller('LocalContactsController', function() {
+    
+});

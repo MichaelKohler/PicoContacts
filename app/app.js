@@ -3,15 +3,15 @@ var picoContactsApp = angular.module('PicoContacts', [ 'ngRoute' ]);
 picoContactsApp.config(['$routeProvider', function($routeProvider) {
     $routeProvider.when('/', {
         controller: 'MainController',
-        controllerAs: 'main',
         templateUrl: 'views/index.html'
     }).when('/about', {
         controller: 'AboutController',
-        controllerAs: 'about',
         templateUrl: 'views/about.html'
+    }).when('/configure', {
+        controller: 'ConfigureController',
+        templateUrl: 'views/configure.html'
+    }).when('/localContacts', {
+        controller: 'LocalContactsController',
+        templateUrl: 'views/localContacts.html'
     });
 }]);
-
-document.addEventListener('DOMComponentsLoaded', function(){
-    // run brick code here...
-});

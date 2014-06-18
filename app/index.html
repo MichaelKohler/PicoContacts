@@ -12,7 +12,18 @@
     <link rel="stylesheet" href="assets/css/main.css">
 </head>
 <body>
-    <ng-view></ng-view>
+    <div id="app" ng-controller="AppController">
+        <div id="globalMenuContainer" class="menuHidden">
+            <ul id="menuList">
+                <li ng-click="routeFromMenuTo('')">Home</li>
+                <li ng-click="routeFromMenuTo('configure')">Config</li>
+                <li ng-click="routeFromMenuTo('localContacts')">Local Contacts</li>
+                <li ng-click="routeFromMenuTo('remoteContacts')">Remote Contacts</li>
+                <li ng-click="routeFromMenuTo('sync')">Sync</li>
+            </ul>
+        </div>
+        <ng-view></ng-view>
+    </div>
 
     <script src="assets/js/libs/jquery-2.1.1.js"></script>
     <script src="assets/js/libs/angularjs_1.3.0b.js"></script>
@@ -20,6 +31,7 @@
     <script src="assets/js/libs/brick-1.0.1.byob.min.js"></script>
 
     <script src="app.js"></script>
+    <script src="controllers/AppController.js"></script>
     <script src="controllers/MainController.js"></script>
     <script src="controllers/AboutController.js"></script>
     <script src="controllers/LocalContactsController.js"></script>

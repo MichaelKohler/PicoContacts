@@ -18,6 +18,48 @@ x-appbar h1 {
     font-size: 1.3em;
 }
 
+#globalMenuContainer {
+    background-color: #00202f;
+    min-width: 25%;
+    position: absolute;
+    top: 45px; /* height of appbar */
+    left: 0;
+    color: #fff;
+    font-size: 0.7em;
+}
+
+#menuList {
+    list-style: none;
+    padding-left: 0;
+}
+
+#menuList li {
+    padding: 1vh 5vw 1.5vh 5vw;
+    border-bottom: #c0c0c0 solid 1px;
+    line-height: 5vh;
+}
+
+#menuList li:last-child {
+    margin-bottom: 2vh;
+    border-bottom: 0px;
+}
+
+.menuHidden {
+    display: none;
+}
+
+.menuDisplayed {
+    animation: animateMenu 1s;
+    height: 40vh;
+    display: block;
+}
+
+/* TODO: list (<ul>) is shown without animation */
+@keyframes animateMenu {
+    0% { height: 0vh; }
+    100% { height: 40vh; }
+}
+
 #container {
     margin-right: 10px;
     margin-left: 10px;

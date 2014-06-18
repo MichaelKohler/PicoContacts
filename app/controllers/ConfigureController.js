@@ -1,4 +1,4 @@
-picoContactsApp.controller('ConfigureController', function($scope, $location) {
+picoContactsApp.controller('ConfigureController', function($scope) {
     $scope.config = {
         address: localStorage.getItem('picoContactsServer'),
         username: localStorage.getItem('picoContactsUsername'),
@@ -10,11 +10,7 @@ picoContactsApp.controller('ConfigureController', function($scope, $location) {
         localStorage.setItem('picoContactsUsername', $scope.config.username);
         // TODO: save password??
         localStorage.setItem('picoContactsMaster', $scope.config.master);
-        $scope.redirectToLocalContacts();
-    };
-
-    $scope.redirectToLocalContacts = function() {
-        $location.path('/localContacts');
+        $scope.routeTo('/localContacts');
     };
 
     $scope.resetStorage = function() {

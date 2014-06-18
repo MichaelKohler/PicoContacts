@@ -19,6 +19,10 @@ picoContactsApp.controller('AppController', function($scope, $location) {
         $location.path('/' + path);
     };
 
+    $scope.routeTo = function(path) {
+        $location.path(path);
+    };
+
     $scope.hasServerConfig = function() {
         return localStorage.getItem('picoContactsServer') !== null;
     };

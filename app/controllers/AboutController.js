@@ -1,3 +1,2 @@
 picoContactsApp.controller('AboutController', function() {
-
 });

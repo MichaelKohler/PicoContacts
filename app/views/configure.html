@@ -4,36 +4,60 @@
         <h1>Configure Server</h1>
     </x-appbar>
     <div id="container">
-        <p>We couldn't find any server information. Please provide the address, username and password. Without them, you won't be able to sync to your OwnCloud instance.</p>
+        <div id="noConfigFound" ng-show="!hasServerConfig()">
+            <p>We couldn't find any server information. Please provide the address, username and password. Without them, you won't be able to sync to your OwnCloud instance.</p>
 
-        <div class="alert pure-u-1" ng-show="configForm.$invalid && !configForm.$pristine">
-            <p>Please fill in all information!<br />One or more fields are not correct!</p>
+            <div class="alert pure-u-1" ng-show="configForm.$invalid && !configForm.$pristine">
+                <p>Please fill in all information!<br />One or more fields are not correct!</p>
+            </div>
+            <form name="configForm" class="pure-form pure-form-aligned" ng-submit="saveConfiguration()" novalidate>
+                <fieldset>
+                    <div class="pure-control-group">
+                        <label for="address">Server Address</label>
+                        <input ng-model="config.address" class="pure-input-1" required id="address" type="url" placeholder="Server Address">
+                    </div>
+
+                    <div class="pure-control-group">
+                        <label for="name">Username</label>
+                        <input ng-model="config.username" class="pure-input-1" required id="name" type="text" placeholder="Username">
+                    </div>
+
+                    <div class="pure-control-group">
+                        <label for="password">Password</label>
+                        <input ng-model="config.password" class="pure-input-1" required id="password" type="password" placeholder="Password">
+                    </div>
+
+                    <label for="masterslave">Master/Slave</label>
+                    <select ng-model="config.master" required class="pure-input-1" id="masterslave">
+                        <option value="">Please choose a master..</option>
+                        <option value="LOCAL">Local as master</option>
+                        <option value="REMOTE">Remote as master</option>
+                    </select>
+                </fieldset>
+                <button type="submit" ng-disabled="configForm.$invalid" class="pure-u-1 pure-button button-secondary">Save Configuration</button>
+            </form>
         </div>
-        <form name="configForm" class="pure-form pure-form-aligned" ng-submit="saveConfiguration()" novalidate>
-            <fieldset>
-                <div class="pure-control-group">
-                    <label for="address">Server Address</label>
-                    <input ng-model="config.address" class="pure-input-1" required id="address" type="url" placeholder="Server Address">
-                </div>
-
-                <div class="pure-control-group">
-                    <label for="name">Username</label>
-                    <input ng-model="config.username" class="pure-input-1" required id="name" type="text" placeholder="Username">
-                </div>
-
-                <div class="pure-control-group">
-                    <label for="password">Password</label>
-                    <input ng-model="config.password" class="pure-input-1" required id="password" type="password" placeholder="Password">
-                </div>
-
-                <label for="masterslave">Master/Slave</label>
-                <select ng-model="config.master" required class="pure-input-1" id="masterslave">
-                    <option value="">Please choose a master..</option>
-                    <option value="LOCAL">Local as master</option>
-                    <option value="REMOTE">Remote as master</option>
-                </select>
-            </fieldset>
-            <button type="submit" ng-disabled="configForm.$invalid" class="pure-u-1 pure-button button-secondary">Save Configuration</button>
-        </form>
+        <div id="configFound" ng-show="hasServerConfig()">
+            <p>The server is perfectly configured. Well done! To delete the current config, click on the delete button below. Attention: this action deletes the config and you will have to enter the credentials and address again!</p>
+            <table class="pure-table pure-table-horizontal">
+                <tr>
+                    <td><strong>Address:</strong></td>
+                    <td>{{config.address}}</td>
+                </tr>
+                <tr>
+                    <td><strong>Username:</strong></td>
+                    <td>{{config.username}}</td>
+                </tr>
+                <tr>
+                    <td><strong>Password:</strong></td>
+                    <td>...</td>
+                </tr>
+                <tr>
+                    <td><strong>Master:</strong></td>
+                    <td>{{config.master}}</td>
+                </tr>
+            </table>
+            <button id="resetStorageButton" class="pure-button button-alert" ng-click="resetStorage()">Delete Config</button>
+        </div>
     </div>
 </div>

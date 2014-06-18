@@ -7,11 +7,19 @@ a, a:hover, a:active {
     text-decoration: none;
 }
 
-.button-secondary {
-    color: white;
+.pure-button {
     border-radius: 4px;
     text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+.button-secondary {
+    color: #fff;
     background: rgb(66, 184, 221);
+}
+
+.button-alert {
+    color: #fff;
+    background: rgb(255, 131, 127);
 }
 
 x-appbar h1 {
@@ -96,4 +104,8 @@ x-appbar h1 {
     margin-left: 0;
     padding-left: 0;
     text-align: left;
+}
+
+#resetStorageButton {
+    margin-top: 5vh;
 }

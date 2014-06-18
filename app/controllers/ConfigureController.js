@@ -1,5 +1,13 @@
 picoContactsApp.controller('ConfigureController', function($scope, $location) {
-    $scope.config = {};
+    $scope.config = {
+        address: localStorage.getItem('picoContactsServer'),
+        username: localStorage.getItem('picoContactsUsername'),
+        master: localStorage.getItem('picoContactsMaster')
+    };
+
+    $scope.hasServerConfig = function() {
+        return localStorage.getItem('picoContactsServer') !== null;
+    };
 
     $scope.saveConfiguration = function() {
         localStorage.setItem('picoContactsServer', $scope.config.address);
@@ -11,5 +19,11 @@ picoContactsApp.controller('ConfigureController', function($scope, $location) {
 
     $scope.redirectToLocalContacts = function() {
         $location.path('/localContacts');
+    };
+
+    $scope.resetStorage = function() {
+        localStorage.removeItem('picoContactsServer');
+        localStorage.removeItem('picoContactsUsername');
+        localStorage.removeItem('picoContactsMaster');
     };
 });

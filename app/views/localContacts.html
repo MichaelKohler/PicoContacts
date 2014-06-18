@@ -4,6 +4,9 @@
         <h1>Local contacts</h1>
     </x-appbar>
     <div id="container">
-        <p>Local contacts...</p>
+        <ul>
+            <!-- TODO: contacts are not displayed without "reload" -->
+            <li ng-repeat="contact in contacts">{{contact.givenName[0]}} {{contact.familyName[0]}}</li>
+        </ul>
     </div>
 </div>

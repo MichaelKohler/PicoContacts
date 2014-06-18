@@ -9,5 +9,12 @@
     "name": "Michael Kohler",
     "url": "http://www.michaelkohler.info"
   },
-  "default_locale": "en"
+  "default_locale": "en",
+  "type": "privileged",
+  "permissions": {
+    "contacts": {
+      "description": "Required for synchronization of your contacts.",
+      "access": "readcreate"
+    }
+  }
 }

@@ -5,10 +5,6 @@ picoContactsApp.controller('ConfigureController', function($scope, $location) {
         master: localStorage.getItem('picoContactsMaster')
     };
 
-    $scope.hasServerConfig = function() {
-        return localStorage.getItem('picoContactsServer') !== null;
-    };
-
     $scope.saveConfiguration = function() {
         localStorage.setItem('picoContactsServer', $scope.config.address);
         localStorage.setItem('picoContactsUsername', $scope.config.username);

@@ -1,10 +1,4 @@
 picoContactsApp.controller('IndexController', function($scope, $location) {
-    var serverAddress = localStorage.getItem('picoContactsServer');
-    var username = localStorage.getItem('picoContactsUsername');
-    if (serverAddress && username) {
-        $location.path('/localContacts');
-    }
-
     $scope.routeToAbout = function() {
         $location.path('/about');
     };

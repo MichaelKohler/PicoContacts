@@ -1,7 +1,7 @@
 var picoContactsApp = angular.module('PicoContacts', [ 'ngRoute' ]);
 
 picoContactsApp.config(['$routeProvider', function($routeProvider) {
-    $routeProvider.when('/', {
+    $routeProvider.when('/overview', {
         controller: 'IndexController',
         templateUrl: 'views/index.html'
     }).when('/about', {
@@ -13,5 +13,5 @@ picoContactsApp.config(['$routeProvider', function($routeProvider) {
     }).when('/localContacts', {
         controller: 'LocalContactsController',
         templateUrl: 'views/localContacts.html'
-    });
+    }).otherwise({ redirectTo: '/overview' });
 }]);

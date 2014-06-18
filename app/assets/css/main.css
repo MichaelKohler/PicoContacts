@@ -57,7 +57,7 @@ x-appbar h1 {
 }
 
 .menuDisplayed {
-    animation: animateMenu 1s;
+    animation: animateMenu 0.5s;
     height: 40vh;
     display: block;
 }

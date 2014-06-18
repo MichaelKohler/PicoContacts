@@ -2,7 +2,7 @@ var picoContactsApp = angular.module('PicoContacts', [ 'ngRoute' ]);
 
 picoContactsApp.config(['$routeProvider', function($routeProvider) {
     $routeProvider.when('/', {
-        controller: 'MainController',
+        controller: 'IndexController',
         templateUrl: 'views/index.html'
     }).when('/about', {
         controller: 'AboutController',

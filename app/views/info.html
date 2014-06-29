@@ -1,0 +1,14 @@
+<div id="index">
+    <x-appbar>
+        <button ng-click="toggleMenu()">=</button>
+        <h1>{{title}}</h1>
+        <button ng-click="routeTo('/about')">?</button>
+    </x-appbar>
+    <div id="container">
+        <img id="logo" src="{{image}}" />
+
+        <div id="indexTextContent">
+            <p>{{message}}</p>
+        </div>
+    </div>
+</div>

@@ -9,8 +9,8 @@ picoContactsApp.controller('LocalContactsController', function($scope) {
             cursor.continue();
         }
         $scope.$digest();
-    }
+    };
     allContacts.onerror = function() {
         console.warn("Something went terribly wrong! :(");
-    }
+    };
 });

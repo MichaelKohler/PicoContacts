@@ -1,4 +1,4 @@
-picoContactsApp.controller('AppController', function($scope, $location) {
+picoContactsApp.controller('AppController', function($scope, $location, ConfigurationService) {
     $scope.menu = document.querySelector('#globalMenuContainer');
     $scope.toggleMenu = function() {
         if ($scope.menu.classList.contains('menuHidden')) {
@@ -23,7 +23,5 @@ picoContactsApp.controller('AppController', function($scope, $location) {
         $location.path(path);
     };
 
-    $scope.hasServerConfig = function() {
-        return localStorage.getItem('picoContactsServer') !== null;
-    };
+    $scope.hasServerConfig = ConfigurationService.hasServerConfig;
 });

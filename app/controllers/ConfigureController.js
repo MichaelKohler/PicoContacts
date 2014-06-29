@@ -1,21 +1,17 @@
-picoContactsApp.controller('ConfigureController', function($scope) {
+picoContactsApp.controller('ConfigureController', function($scope, ConfigurationService) {
     $scope.config = {
-        address: localStorage.getItem('picoContactsServer'),
-        username: localStorage.getItem('picoContactsUsername'),
-        master: localStorage.getItem('picoContactsMaster')
+        address: ConfigurationService.get('picoContactsServer'),
+        username: ConfigurationService.get('picoContactsUsername'),
+        master: ConfigurationService.get('picoContactsMaster')
     };
 
     $scope.saveConfiguration = function() {
-        localStorage.setItem('picoContactsServer', $scope.config.address);
-        localStorage.setItem('picoContactsUsername', $scope.config.username);
+        ConfigurationService.save('picoContactsServer', $scope.config.address);
+        ConfigurationService.save('picoContactsUsername', $scope.config.username);
         // TODO: save password??
-        localStorage.setItem('picoContactsMaster', $scope.config.master);
+        ConfigurationService.save('picoContactsMaster', $scope.config.master);
         $scope.routeTo('/localContacts');
     };
 
-    $scope.resetStorage = function() {
-        localStorage.removeItem('picoContactsServer');
-        localStorage.removeItem('picoContactsUsername');
-        localStorage.removeItem('picoContactsMaster');
-    };
+    $scope.resetStorage = ConfigurationService.resetStorage;
 });

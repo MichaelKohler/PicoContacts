@@ -109,3 +109,50 @@ x-appbar h1 {
 #resetStorageButton {
     margin-top: 5vh;
 }
+
+#contactList {
+    list-style: none inside;
+    padding-left: 2vw;
+    margin-left: 0;
+}
+
+#contactList li {
+    min-height: 15vh;
+}
+
+#contactList li img {
+    float: left;
+    margin: 0 5vw 0 0;
+    height: 64px;
+    width: 48px;
+    vertical-align: middle;
+}
+
+.contactEntry {
+    border-bottom: 1px #c0c0c0 solid;
+    margin-top: 3vh;
+    padding-bottom: 4vh;
+}
+
+.contactEntry:last-child {
+    border-bottom: none;
+}
+
+.contactInformation {
+    padding-left: 5vw;
+}
+
+.contactInformation .name {
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+.contactInformation .phoneNumber {
+    margin-top: 3vh;
+    font-size: 0.8em;
+}
+
+#syncButton {
+    margin-top: 5vh;
+    margin-bottom: 2vh;
+}

@@ -4,9 +4,15 @@
         <h1>Local contacts</h1>
     </x-appbar>
     <div id="container">
-        <ul>
-            <!-- TODO: contacts are not displayed without "reload" -->
-            <li ng-repeat="contact in contacts">{{contact.givenName[0]}} {{contact.familyName[0]}}</li>
+        <button id="syncButton" ng-click="routeTo('sync')" class="pure-u-1 pure-button button-alert">Sync</button>
+        <ul id="contactList">
+            <li ng-repeat="contact in contacts" class="contactEntry">
+                <img src="assets/images/user.svg" />
+                <div class="contactInformation">
+                    <div class="name">{{contact.givenName[0]}} {{contact.familyName[0]}}</div>
+                    <div class="phoneNumber">{{contact.tel[0].value}}</div>
+                </div>
+            </li>
         </ul>
     </div>
 </div>

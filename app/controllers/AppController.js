@@ -16,10 +16,11 @@ picoContactsApp.controller('AppController', function($scope, $location, Configur
         $scope.menu.classList.remove('menuDisplayed');
         $scope.menu.classList.add('menuHidden');
 
-        $location.path('/' + path);
+        $scope.routeTo(path);
     };
 
     $scope.routeTo = function(path) {
+        if (!path.startsWith('/')) { path = '/' + path; }
         $location.path(path);
     };
 

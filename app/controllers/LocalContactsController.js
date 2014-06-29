@@ -8,6 +8,7 @@ picoContactsApp.controller('LocalContactsController', function($scope) {
             $scope.contacts.push(cursor.result);
             cursor.continue();
         }
+        $scope.$digest();
     }
     allContacts.onerror = function() {
         console.warn("Something went terribly wrong! :(");

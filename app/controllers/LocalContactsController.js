@@ -1,4 +1,4 @@
-picoContactsApp.controller('LocalContactsController', function($scope) {
+picoContactsApp.controller('LocalContactsController', function($scope, $location) {
     $scope.contacts = [];
 
     var allContacts = navigator.mozContacts.getAll({sortBy: "familyName", sortOrder: "descending"});
@@ -11,6 +11,7 @@ picoContactsApp.controller('LocalContactsController', function($scope) {
         $scope.$digest();
     };
     allContacts.onerror = function() {
-        console.warn("Something went terribly wrong! :(");
+        $scope.routeTo('error');
+        // TODO: somehow reload page to instantly show the error page?
     };
 });

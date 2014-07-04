@@ -13,5 +13,6 @@ picoContactsApp.controller('LocalContactsController', function($scope, $location
     allContacts.onerror = function() {
         $scope.routeTo('/error');
         // TODO: somehow reload page to instantly show the error page?
+        // TODO: display error to user -> too much information?
     };
 });
